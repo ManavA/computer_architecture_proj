@@ -48,8 +48,9 @@ BranchPredictorParams::create()
     } else if (predType == "always_true") {
         return new AlwaysTrueBP(this);
     } else if (predType == "always_back") {
+        std::cout<<"always_back predictor\n";
         return new AlwaysBackBP(this);
-    }else {
+    } else {
         fatal("Invalid BP selected!");
     }
 }

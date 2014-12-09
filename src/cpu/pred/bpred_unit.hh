@@ -189,7 +189,7 @@ class BPredUnit : public SimObject
 
     void dump();
 
-  private:
+  protected:
     struct PredictorHistory {
         /**
          * Makes a predictor history struct that contains any

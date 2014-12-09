@@ -120,11 +120,15 @@ bool AlwaysBackBP::predictInOrder(StaticInstPtr &inst,
                 // If it's not a return, use the BTB to get the target addr.
                 TheISA::PCState btbLookup = 
                     BTB.lookup(predPC.instAddr(), asid);
+                DPRINTF(Branch, "[tid:%i]: [asid:%i] Instruction %x, btbLookup %x, predPC %x.\n",
+                        tid, asid, instPC.instAddr(), btbLookup.instAddr(), predPC.instAddr());
                 if (btbLookup.instAddr() < predPC.instAddr()) {
                   target = btbLookup;
+                  DPRINTF(Branch, "[tid:%i]: [asid:%i] Instruction %s BTB entry %s is before next instruction %s.\n",
+                          tid, asid, instPC, btbLookup, predPC);
                 } else {
-                  DPRINTF(Branch, "[tid:%i]: [asid:%i] BTB entry is after next instruction, predicting false %s.\n",
-                          tid, asid, instPC, target);
+                  DPRINTF(Branch, "[tid:%i]: [asid:%i] Instruction %s BTB entry is after next instruction, predicting false.\n",
+                          tid, asid, instPC);
                   pred_taken = false;
                 }
 
