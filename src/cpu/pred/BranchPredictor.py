@@ -35,8 +35,8 @@ class BranchPredictor(SimObject):
     cxx_header = "cpu/pred/bpred_unit.hh"
 
     numThreads = Param.Unsigned(1, "Number of threads")
-    predType = Param.String("always_true",
-        "Branch predictor type ('local', 'always_true')")
+    predType = Param.String("always_back",
+        "Branch predictor type ('local', 'always_back')")
     localPredictorSize = Param.Unsigned(2048, "Size of local predictor")
     localCtrBits = Param.Unsigned(2, "Bits per counter")
     localHistoryTableSize = Param.Unsigned(2048, "Size of local history table")

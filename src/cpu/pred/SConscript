@@ -39,5 +39,6 @@ if 'InOrderCPU' in env['CPU_MODELS'] or 'O3CPU' in env['CPU_MODELS']:
     Source('ras.cc')
     Source('tournament.cc')
     Source('always_true.cc')
+    Source('always_back.cc')
     DebugFlag('FreeList')
     DebugFlag('Branch')

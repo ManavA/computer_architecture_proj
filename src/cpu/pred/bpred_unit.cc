@@ -35,6 +35,7 @@
 #include "cpu/pred/bpred_unit_impl.hh"
 #include "cpu/pred/tournament.hh"
 #include "cpu/pred/always_true.hh"
+#include "cpu/pred/always_back.hh"
 
 BPredUnit *
 BranchPredictorParams::create()
@@ -46,7 +47,9 @@ BranchPredictorParams::create()
         return new TournamentBP(this);
     } else if (predType == "always_true") {
         return new AlwaysTrueBP(this);
-    } else {
+    } else if (predType == "always_back") {
+        return new AlwaysBackBP(this);
+    }else {
         fatal("Invalid BP selected!");
     }
 }
