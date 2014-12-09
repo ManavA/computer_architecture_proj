@@ -139,6 +139,10 @@ if options.bench:
             process = spec2006.gcc()
         elif app == 'bwaves':
             process = spec2006.bwaves()
+        elif app == 'mcf':
+            process = spec2006.mcf()
+        elif app == 'milc':
+            process = spec2006.milc()
         else:
             print "unkown benchamarks"
             sys.exit(1)

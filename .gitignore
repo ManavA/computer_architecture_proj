@@ -11,3 +11,8 @@ m5out
 src/doxygen
 ext/dramsim2/DRAMSim2
 log
+bwaves*.in
+bwaves*.out
+inp.out
+stats
+su3imp.out
